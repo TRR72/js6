@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   
+    <!-- Создать в html список состоящий из 3-х произвольных элементов li
+Нужно создать кнопку которая будет добавлять элементы списка с текстом “новый элемент списка”
+Создать кнопку, которая будет удалять первый элемент из созданного списка
+Создать кнопку, при клике на которую ей добавляется-убирается класс “click” -->
+
+    <ul class="menu">
+        <li>Пункт1</li>
+        <li>Пункт2</li>
+        <li>Пункт3</li>
+    </ul>
+    <button class="addElement">Добавить элемент</button>
+    <button class="delElement">Удалить первый элемент из списка</button>
+    <button class="addAtributeClick">Добавить или удалить атрибут click</button>
+    <script>
+
+        addElementLi = document.querySelector('.addElement');
+        const menuList = document.querySelector('.menu')
+
+        addElementLi.addEventListener('click', (e) => {
+            const newliEl = document.createElement('li')
+            menuList.append(newliEl)
+            newliEl.textContent = 'Новый элемент списка'
+        })
+
+        const delLiEl = document.querySelector('.delElement');
+        delLiEl.onclick = (event) => {
+            if (document.querySelector('li'))
+                document.querySelector('li').remove()
+        }
+
+        const addAtributeClick = document.querySelector('.addAtributeClick')
+        addAtributeClick.addEventListener('click', (e) => {
+            addAtributeClick.toggleAttribute('click')
+            console.log(addAtributeClick);
+        })
+
+    </script>
+
+    
+</body>
+
+</html>
